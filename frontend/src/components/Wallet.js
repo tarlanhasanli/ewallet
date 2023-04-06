@@ -1,5 +1,10 @@
 import React, {useState} from "react";
-import {IconButton, TableCell, TableRow, TextField} from "@mui/material";
+import {
+  IconButton,
+  TableCell,
+  TableRow,
+  TextField
+} from "@mui/material";
 import {
   Add as AddIcon,
   Remove as WithdrawIcon,
@@ -11,6 +16,8 @@ import api from '../api';
 function Wallet({wallet, rowIndex, allWallets, onTransferFund}) {
   const [openTransferDialog, setOpenTransferDialog] = useState(false);
   const [amount, setAmount] = useState("");
+
+  const isTransferDisabled = wallet.balance === 0 || allWallets.length <= 1
 
   const handleAddWithdrawFund = (isAdd) => {
     if (!amount || amount <= 0) {
@@ -76,8 +83,9 @@ function Wallet({wallet, rowIndex, allWallets, onTransferFund}) {
             <WithdrawIcon/>
           </IconButton>
         </TableCell>
-        <TableCell>
-          <IconButton onClick={() => setOpenTransferDialog(true)} disabled={allWallets.size > 1}>
+        <TableCell disabled={true}>
+          <IconButton onClick={() => !isTransferDisabled && setOpenTransferDialog(true)}
+                      disabled={isTransferDisabled}>
             <TransferIcon/>
           </IconButton>
           <TransferDialog

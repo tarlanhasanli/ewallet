@@ -38,7 +38,7 @@ function TransferDialog(props) {
       <Dialog open={props.open} onClose={props.onClose}>
         <DialogTitle>Transfer Funds</DialogTitle>
         <DialogContent>
-          <FormControl>
+          <FormControl style={{ minWidth: "150px" }}>
             <InputLabel>Receiver</InputLabel>
             <Select value={receiverId} onChange={handleReceiverChange}>
               {props.wallets?.map((wallet) => (
