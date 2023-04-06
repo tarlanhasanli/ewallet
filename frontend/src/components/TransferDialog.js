@@ -60,7 +60,8 @@ function TransferDialog(props) {
         </DialogContent>
         <DialogActions>
           <Button onClick={props.onClose}>Cancel</Button>
-          <Button onClick={handleTransfer} color="primary">
+          <Button onClick={handleTransfer} color="primary"
+                  disabled={amount === '' || props.balance === 0 || amount > props.balance}>
             Transfer
           </Button>
         </DialogActions>

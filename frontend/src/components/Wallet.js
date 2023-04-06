@@ -77,13 +77,13 @@ function Wallet({wallet, rowIndex, allWallets, onTransferFund}) {
           </IconButton>
         </TableCell>
         <TableCell>
-          <IconButton onClick={() => setOpenTransferDialog(true)}>
+          <IconButton onClick={() => setOpenTransferDialog(true)} disabled={allWallets.size > 1}>
             <TransferIcon/>
           </IconButton>
           <TransferDialog
               open={openTransferDialog}
               onClose={() => setOpenTransferDialog(false)}
-              wallets={allWallets}
+              wallets={allWallets.filter((w) => w.id !== wallet.id)}
               onTransfer={handleTransfer}
               balance={wallet.balance}
           />

@@ -1,4 +1,4 @@
-package com.kn.ewallet;
+package com.kn.ewallet.service;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
