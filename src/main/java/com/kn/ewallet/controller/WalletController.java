@@ -1,10 +1,9 @@
 package com.kn.ewallet.controller;
 
-import com.kn.ewallet.WalletService;
+import com.kn.ewallet.service.WalletService;
 import com.kn.ewallet.model.Wallet;
 import java.math.BigDecimal;
 import java.util.List;
-import javax.validation.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

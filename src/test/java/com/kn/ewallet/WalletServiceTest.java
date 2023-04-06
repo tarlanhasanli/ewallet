@@ -4,6 +4,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import com.kn.ewallet.db.WalletRepository;
+import com.kn.ewallet.service.WalletService;
 import com.kn.ewallet.exceptions.InsufficientFundsException;
 import com.kn.ewallet.model.Wallet;
 import java.math.BigDecimal;

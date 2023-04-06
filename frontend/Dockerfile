@@ -1,13 +1,17 @@
-FROM node:14 AS build
+# Use the official Node.js image as the base image
+FROM node:16 AS build
 
+# Set the working directory
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm ci
+# Copy package.json and package-lock.json to the working directory
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm ci --verbose
+
+# Copy the rest of the application code to the working directory
 COPY . .
+
+# Build the frontend application
 RUN npm run build
-
-FROM nginx:1.21
-
-COPY --from=build /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
