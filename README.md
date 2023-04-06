@@ -33,9 +33,6 @@ The backend provides the following endpoints:
 - PUT /wallets/{id}/fund: Add/Withdraw funds from a wallet
 - PUT /wallets/{id}/transfer: Transfer funds from one wallet to another
 
-#### Note
-Basic Authentication is not implemented in this version of the application.
-
 ### Running without Docker
 If you prefer to run the application without Docker, follow these steps:
 
