@@ -32,6 +32,12 @@ public class Wallet {
         this.balance = balance;
     }
 
+    public Wallet(Long id, String name, BigDecimal balance) {
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
+    }
+
     public void updateBalance(BigDecimal amount) {
         if (balance.add(amount).compareTo(BigDecimal.ZERO) >= 0) {
             balance = balance.add(amount);
