@@ -15,15 +15,14 @@ E-Wallet is a web application built with Spring Boot (Java) backend and React fr
 - React
 - Axios
 - Material-UI
+- Docker
 
 ### How to Run
 1. Clone the repository
-2. Open a terminal and navigate to the ewallet/frontend directory
-3. Run npm install to install the necessary dependencies
-4. Run npm start to start the React development server
-5. Open another terminal and navigate to the ewallet directory
-6. Run mvn spring-boot:run to start the Spring Boot server
-7. Open a web browser and navigate to http://localhost:3000 to use the application
+2. Ensure Docker and Docker Compose are installed on your system
+3. Open a terminal and navigate to the `ewallet` directory
+4. Run `docker-compose up --build` to build and start the Docker containers
+5. Open a web browser and navigate to http://localhost:3000 to use the application
 
 ### Endpoints
 The backend provides the following endpoints:
@@ -35,4 +34,15 @@ The backend provides the following endpoints:
 - PUT /wallets/{id}/transfer: Transfer funds from one wallet to another
 
 #### Note
-Basic Authentication and Transaction History functionality are not implemented in this version of the application.
+Basic Authentication is not implemented in this version of the application.
+
+### Running without Docker
+If you prefer to run the application without Docker, follow these steps:
+
+1. Clone the repository
+2. Open a terminal and navigate to the `ewallet/frontend` directory
+3. Run `npm install` to install the necessary dependencies
+4. Run `npm start` to start the React development server
+5. Open another terminal and navigate to the `ewallet` directory
+6. Run `mvn spring-boot:run` to start the Spring Boot server
+7. Open a web browser and navigate to http://localhost:3000 to use the application
